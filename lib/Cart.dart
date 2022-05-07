@@ -2,6 +2,7 @@ import 'package:finalproject/Home.dart';
 import 'package:flutter/material.dart';
 
 class Cart extends StatelessWidget {
+  static const routename = '/Cart';
   const Cart({Key? key}) : super(key: key);
 
   @override

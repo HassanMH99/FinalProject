@@ -2,8 +2,8 @@ import 'package:finalproject/Cart.dart';
 
 import 'package:finalproject/MainPage.dart';
 
-import 'package:finalproject/Services.dart';
-import 'package:finalproject/Signup.dart';
+import 'package:finalproject/screens/Services.dart';
+import 'package:finalproject/screens/Signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
@@ -22,7 +22,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Color.fromARGB(255, 25, 26, 25),
         title: Center(
           child: Text(
             'Services Browser',
@@ -30,11 +30,12 @@ class _MainScreenState extends State<MainScreen> {
         ),
         leading: IconButton(
           icon: Icon(Icons.menu),
+          color: Color.fromARGB(255, 230, 255, 225),
           onPressed: () => ZoomDrawer.of(context)!.toggle(),
         ),
         actions: [
           IconButton(
-              onPressed: () {
+              onPressed: () async {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Cart()),
@@ -42,16 +43,20 @@ class _MainScreenState extends State<MainScreen> {
               },
               icon: Icon(
                 Icons.add_shopping_cart,
-                color: Colors.black,
+                color: Color.fromARGB(255, 230, 255, 225),
               ))
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedFontSize: 15,
+        selectedFontSize: 10,
         currentIndex: _selectedOption,
-        selectedIconTheme: IconThemeData(color: Colors.green, size: 30),
-        selectedItemColor: Colors.black,
+        backgroundColor: Color.fromARGB(255, 25, 26, 25),
+        selectedIconTheme:
+            IconThemeData(color: Color.fromARGB(255, 237, 255, 237), size: 30),
+        selectedItemColor: Color.fromARGB(255, 237, 255, 237),
+        unselectedItemColor: Color.fromARGB(71, 237, 255, 237),
         selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
+        unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

@@ -1,7 +1,6 @@
-import 'package:finalproject/Libraries.dart';
+import 'package:finalproject/screens/CafeRoom.dart';
+import 'package:finalproject/screens/Libraries.dart';
 import 'package:flutter/material.dart';
-
-import 'CafeRoom.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -12,10 +11,16 @@ class MainPage extends StatelessWidget {
       child: Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("images/playstore.png"), fit: BoxFit.cover)),
+            gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          colors: [
+            Color.fromARGB(255, 73, 230, 0),
+            Color.fromARGB(255, 13, 78, 0),
+          ],
+        )),
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(5.0),
+          padding: EdgeInsets.all(10.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -27,20 +32,27 @@ class MainPage extends StatelessWidget {
               Container(
                 width: double.infinity,
                 height: 120,
-                color: Colors.green,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  image: new DecorationImage(
+                    image: new AssetImage("images/cafeteria.png"),
+                    fit: BoxFit.fitHeight,
+                    alignment: Alignment.centerLeft,
+                  ),
+                  color: Color.fromARGB(207, 25, 26, 25),
+                ),
                 child: Stack(
                   fit: StackFit.expand,
                   alignment: Alignment.center,
                   children: [
-                    Image.asset(
-                      "images/login.png",
-                      fit: BoxFit.fill,
+                    Padding(
+                      padding: EdgeInsets.all(10),
                     ),
                     Center(
                       child: Text(
-                        "Cafeterias",
+                        "\t\t\t\t\t\tCafeterias",
                         style: TextStyle(
-                            color: Colors.black,
+                            color: Color.fromARGB(255, 245, 255, 236),
                             fontSize: 30,
                             fontWeight: FontWeight.bold),
                       ),
@@ -62,20 +74,27 @@ class MainPage extends StatelessWidget {
               Container(
                 width: double.infinity,
                 height: 120,
-                color: Colors.green,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  image: new DecorationImage(
+                    image: new AssetImage("images/library.png"),
+                    fit: BoxFit.fitHeight,
+                    alignment: Alignment.centerLeft,
+                  ),
+                  color: Color.fromARGB(207, 25, 26, 25),
+                ),
                 child: Stack(
                   fit: StackFit.expand,
                   alignment: Alignment.center,
                   children: [
-                    Image.asset(
-                      "images/login.png",
-                      fit: BoxFit.fill,
+                    Padding(
+                      padding: EdgeInsets.all(10),
                     ),
                     Center(
                       child: Text(
-                        "Libraries",
+                        "\t\t\t\tLibraries",
                         style: TextStyle(
-                            color: Colors.black,
+                            color: Color.fromARGB(255, 245, 255, 236),
                             fontSize: 30,
                             fontWeight: FontWeight.bold),
                       ),
@@ -97,20 +116,27 @@ class MainPage extends StatelessWidget {
               Container(
                 width: double.infinity,
                 height: 120,
-                color: Colors.green,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  image: new DecorationImage(
+                    image: new AssetImage("images/book.png"),
+                    fit: BoxFit.fitHeight,
+                    alignment: Alignment.centerLeft,
+                  ),
+                  color: Color.fromARGB(207, 25, 26, 25),
+                ),
                 child: Stack(
                   fit: StackFit.expand,
                   alignment: Alignment.center,
                   children: [
-                    Image.asset(
-                      "images/login.png",
-                      fit: BoxFit.fill,
+                    Padding(
+                      padding: EdgeInsets.all(10),
                     ),
                     Center(
                       child: Text(
-                        "Book Store",
+                        "\t\t\t\t\t\t\t\tBook Store",
                         style: TextStyle(
-                            color: Colors.black,
+                            color: Color.fromARGB(255, 245, 255, 236),
                             fontSize: 30,
                             fontWeight: FontWeight.bold),
                       ),
@@ -132,21 +158,28 @@ class MainPage extends StatelessWidget {
               Container(
                 width: double.infinity,
                 height: 120,
-                color: Colors.green,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  image: new DecorationImage(
+                    image: new AssetImage("images/ac.png"),
+                    fit: BoxFit.fitHeight,
+                    alignment: Alignment.centerLeft,
+                  ),
+                  color: Color.fromARGB(207, 25, 26, 25),
+                ),
                 child: Stack(
                   fit: StackFit.expand,
                   alignment: Alignment.center,
                   children: [
-                    Image.asset(
-                      "images/login.png",
-                      fit: BoxFit.fill,
+                    Padding(
+                      padding: EdgeInsets.all(10),
                     ),
                     Center(
                       child: Center(
                         child: Text(
-                          "Acadimical Services",
+                          "\t\t\t\t\t\t\t\t\tAcadimical \n \t\t\t\t\t\t\t\tServices",
                           style: TextStyle(
-                              color: Colors.black,
+                              color: Color.fromARGB(255, 245, 255, 236),
                               fontSize: 30,
                               fontWeight: FontWeight.bold),
                         ),

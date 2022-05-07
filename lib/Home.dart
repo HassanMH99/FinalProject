@@ -12,7 +12,6 @@ class Home extends StatelessWidget {
     return ZoomDrawer(
       mainScreen: MainScreen(),
       menuScreen: MenuScreen(),
-      style: DrawerStyle.Style7,
     );
   }
 }

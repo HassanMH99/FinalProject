@@ -1,5 +1,5 @@
-import 'package:finalproject/Login.dart';
-import 'package:finalproject/Profile.dart';
+import 'package:finalproject/screens/Login.dart';
+import 'package:finalproject/screens/Profile.dart';
 import 'package:finalproject/Transaction.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +11,12 @@ class MenuItem {
 
 class MenuScreen extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
+
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final height = size.height;
+    final width = size.width;
     int _selectedOption = 0;
     final name = 'Mohammad Hassan';
     final email = 'Cride.it1999@gmail.com';
@@ -24,7 +28,7 @@ class MenuScreen extends StatelessWidget {
         backgroundColor: Colors.green,
         body: Drawer(
           child: Material(
-            color: Colors.green,
+            color: Colors.blue,
             child: ListView(
               padding: padding,
               children: <Widget>[
@@ -34,22 +38,22 @@ class MenuScreen extends StatelessWidget {
                   image: image,
                   onClicked: () {},
                 ),
-                const SizedBox(height: 48),
+                SizedBox(height: height / 100),
                 buildMenuItem(
                     text: "Profile",
                     icon: Icons.account_circle_outlined,
                     onClicked: () => SelectedItem(context, 0)),
-                const SizedBox(height: 16),
+                SizedBox(height: 16),
                 buildMenuItem(
                     text: "Transaction",
                     icon: Icons.transform_outlined,
                     onClicked: () => SelectedItem(context, 1)),
-                const SizedBox(height: 16),
+                SizedBox(height: 16),
                 buildMenuItem(
                     text: "Rate Us", icon: Icons.star_border_outlined),
-                const SizedBox(height: 16),
+                SizedBox(height: 16),
                 buildMenuItem(text: "Notification", icon: Icons.notifications),
-                const SizedBox(
+                SizedBox(
                   height: 50,
                 ),
                 ElevatedButton(
@@ -57,7 +61,7 @@ class MenuScreen extends StatelessWidget {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Login()));
                   },
-                  child: const Text(
+                  child: Text(
                     'LogOut',
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
