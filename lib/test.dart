@@ -1,3 +1,7 @@
+/*import 'dart:convert';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:finalproject/Home.dart';
 import 'package:flutter/material.dart';
 
 class test extends StatefulWidget {
@@ -14,60 +18,84 @@ class _testState extends State<test> {
     final size = MediaQuery.of(context).size;
     final height = size.height;
     final width = size.width;
-    return SafeArea(
-        child: Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            backgroundColor: Colors.blue.withOpacity(0.7),
-            leading: Icon(Icons.menu),
-            actions: [
-              Icon(Icons.notifications),
-              Icon(Icons.search),
-              // Shohel Rana Shanto
-            ],
-            pinned: true,
-            expandedHeight: 200,
-            floating: true,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text('Flutter Sliver'),
-              centerTitle: true,
-              background: Image(
-                image: NetworkImage(
-                    'https://pfps.gg/assets/banners/2547-illusion-gif.gif'),
-                fit: BoxFit.cover,
+    return Scaffold(
+        appBar: AppBar(
+            title: Text(
+              "CafeRoom",
+              style: TextStyle(color: Colors.black),
+            ),
+            elevation: 0.0,
+            backgroundColor: Colors.green,
+            centerTitle: true,
+            leading: IconButton(
+              icon: Icon(
+                Icons.backspace,
+                color: Colors.black,
               ),
-            ),
-          ),
-          SliverList(
-              delegate: SliverChildBuilderDelegate(
-            (context, index) {
-              return Card(
-                color: Colors.pink[100 * (index % 9 + 1)],
-                child: ListTile(
-                  title: Text('wew'),
-                ),
-              );
-            },
-            addAutomaticKeepAlives: false,
-          )),
-          SliverGrid(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                return Card(
-                  color: Colors.green[100 * (index % 9 + 1)],
-                  child: ListTile(
-                    title: Text("shohel$index"),
-                  ),
-                );
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => Home()));
               },
-              childCount: 100,
             ),
-            gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
-          ),
-        ],
-      ),
-    ));
+            actions: [
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.search,
+                    color: Colors.black,
+                  )),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.notifications_none,
+                  color: Colors.black,
+                ),
+              ),
+            ]),
+        body: StreamBuilder(
+            stream: readProduct(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                final prod = snapshot.data!;
+                return ListView(
+                  children: prod.map(buildProduct).toList(),
+                );
+              }
+            }));
   }
 }
+
+Widget buildProduct(productD prod1) => ListTile(
+      leading: CircleAvatar(
+        child: Text('${prod1.price}'),
+      ),
+      title: Text(prod1.name),
+    );
+
+Stream<List<productD>> readProduct() => FirebaseFirestore.instance
+    .collection("doomproducts")
+    .snapshots()
+    .map((snapshot) =>
+        snapshot.docs.map((doc) => productD.fromJson(doc.data())).toList());
+
+class productD {
+  String id;
+  String name;
+  String price;
+  String image;
+  productD(
+      {required this.id,
+      required this.name,
+      required this.price,
+      required this.image});
+
+  Map<String, dynamic> toJson() =>
+      {'id': id, 'name': name, 'price': price, 'image': image};
+
+  static productD fromJson(Map<String, dynamic> data) => productD(
+      id: data['id'],
+      name: data['name'],
+      price: data['price'],
+      image: data['image']);
+}
+*/

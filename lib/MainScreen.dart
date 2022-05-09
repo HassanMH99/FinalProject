@@ -1,6 +1,5 @@
-import 'package:finalproject/Cart.dart';
-
 import 'package:finalproject/MainPage.dart';
+import 'package:finalproject/screens/CartScreen.dart';
 
 import 'package:finalproject/screens/Services.dart';
 import 'package:finalproject/screens/Signup.dart';
@@ -38,7 +37,7 @@ class _MainScreenState extends State<MainScreen> {
               onPressed: () async {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Cart()),
+                  MaterialPageRoute(builder: (context) => CartScreen()),
                 );
               },
               icon: Icon(

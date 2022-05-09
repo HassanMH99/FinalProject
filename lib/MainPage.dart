@@ -1,5 +1,6 @@
 import 'package:finalproject/screens/CafeRoom.dart';
 import 'package:finalproject/screens/Libraries.dart';
+import 'package:finalproject/screens/Library1.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {
@@ -92,7 +93,7 @@ class MainPage extends StatelessWidget {
                     ),
                     Center(
                       child: Text(
-                        "\t\t\t\tLibraries",
+                        "\t\t\t\tLibrary",
                         style: TextStyle(
                             color: Color.fromARGB(255, 245, 255, 236),
                             fontSize: 30,
@@ -104,7 +105,7 @@ class MainPage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Libraries()));
+                                builder: (context) => Library1()));
                       },
                     )
                   ],

@@ -1,5 +1,6 @@
 import 'package:finalproject/Home.dart';
 import 'package:finalproject/screens/Doom.dart';
+import 'package:finalproject/screens/ListdoomProduct.dart';
 import 'package:flutter/material.dart';
 
 class CafeRoom extends StatelessWidget {
@@ -40,7 +41,7 @@ class CafeRoom extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Doom()),
+                MaterialPageRoute(builder: (context) => ListdoomProduct()),
               );
             },
           ),

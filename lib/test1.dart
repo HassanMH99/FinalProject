@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class test1 extends StatefulWidget {
@@ -20,16 +20,21 @@ class _test1State extends State<test1> {
           leading: Icon(Icons.backpack),
         ),
         body: StreamBuilder<List<productD>>(
-            stream: ReadProduct(),
+            stream: FirebaseFirestore.instance
+                .collection('doomproducts')
+                .snapshots()
+                .map((snapshot) => snapshot.docs
+                    .map((doc) => productD.fromJson(doc.data()))
+                    .toList()),
             builder: (context, snapshot) {
               if (snapshot.hasError) {
                 print('wew');
                 return Text('Somthing Went wrotng! ${snapshot.error}');
               } else if (snapshot.hasData) {
                 print('wew1');
-                final products = snapshot.data!;
+                var products = snapshot.data;
                 return ListView(
-                  children: products.map(buildProduct).toList(),
+                  children: products!.map(buildProduct).toList(),
                 );
               } else {
                 print('wew2');
@@ -85,4 +90,3 @@ Widget buildProduct(productD product) => Container(
         ],
       ),
     );
-*/

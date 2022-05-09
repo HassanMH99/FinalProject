@@ -1,4 +1,4 @@
-import 'dart:convert';
+/*import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -6,7 +6,8 @@ import '../models/http_exception.dart';
 import 'productdoom.dart';
 
 class products with ChangeNotifier {
-  List<productdoom> _items = [
+  late List<productdoom>
+      _items; /*[
     productdoom(
         id: '1',
         name: 'potato',
@@ -37,9 +38,11 @@ class products with ChangeNotifier {
         price: '12',
         imageUrl:
             'https://firebasestorage.googleapis.com/v0/b/graduateproject-5ac10.appspot.com/o/finger.jpg?alt=media&token=b56b115e-aefc-4b27-82fa-a8947f6ed846')
-  ];
-  late String authToken;
-  late String userId;
+  ];*/
+  late String authToken = "wew";
+
+  late String userId = "1";
+
   getData(String authToken, String uId, List<productdoom> products) {
     authToken = authToken;
     userId = uId;
@@ -113,3 +116,4 @@ class products with ChangeNotifier {
     }
   }
 }
+*/

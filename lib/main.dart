@@ -1,18 +1,21 @@
-import 'package:finalproject/Cart.dart';
-
 import 'package:finalproject/screens/CafeRoom.dart';
+import 'package:finalproject/screens/CartScreen.dart';
+import 'package:finalproject/screens/CheckOut.dart';
 import 'package:finalproject/screens/Doom.dart';
 import 'package:finalproject/screens/Libraries.dart';
 import 'package:finalproject/screens/Library1.dart';
-import 'package:finalproject/screens/Library2.dart';
-import 'package:finalproject/screens/Library3.dart';
+
+import 'package:finalproject/screens/ListdoomProduct.dart';
 import 'package:finalproject/screens/Login.dart';
 import 'package:finalproject/screens/Profile.dart';
 import 'package:finalproject/screens/Services.dart';
 import 'package:finalproject/screens/Signup.dart';
+import 'package:finalproject/test.dart';
+import 'package:finalproject/test1.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +38,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: Task(items: items),
-      home: Login(), debugShowCheckedModeBanner: false,
+      home: Login(),
+      debugShowCheckedModeBanner: false,
       // routes: {
       // Login.routename: (_) => Login(),
       // Signup.routename: (_) => Signup(),

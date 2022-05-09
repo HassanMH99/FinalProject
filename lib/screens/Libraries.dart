@@ -1,7 +1,5 @@
 import 'package:finalproject/Home.dart';
 import 'package:finalproject/screens/Library1.dart';
-import 'package:finalproject/screens/Library2.dart';
-import 'package:finalproject/screens/Library3.dart';
 import 'package:flutter/material.dart';
 
 class Libraries extends StatelessWidget {
@@ -99,7 +97,7 @@ class Libraries extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Library2()),
+                          MaterialPageRoute(builder: (context) => Library1()),
                         );
                       },
                     ),
@@ -133,7 +131,7 @@ class Libraries extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Library3()),
+                          MaterialPageRoute(builder: (context) => Library1()),
                         );
                       },
                     ),
