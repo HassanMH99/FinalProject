@@ -15,7 +15,7 @@ class CafeRoom extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(20)),
         image: new DecorationImage(
-          image: new AssetImage("images/ca1.png"),
+          image: new AssetImage("images/image1.png"),
           fit: BoxFit.fitWidth,
         ),
       ),
@@ -27,7 +27,7 @@ class CafeRoom extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              "Doom",
+              "",
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
@@ -39,7 +39,8 @@ class CafeRoom extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => CafeteriaShop(cafe: 'Doom')),
+                MaterialPageRoute(
+                    builder: (context) => CafeteriaShop(cafe: 'Doom')),
               );
             },
           ),
@@ -52,7 +53,7 @@ class CafeRoom extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(20)),
         image: new DecorationImage(
-          image: new AssetImage("images/ca2.png"),
+          image: new AssetImage("images/image2.png"),
           fit: BoxFit.fitWidth,
         ),
       ),
@@ -64,7 +65,7 @@ class CafeRoom extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              "Adab",
+              "",
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
@@ -76,7 +77,10 @@ class CafeRoom extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => CafeteriaShop(cafe: 'Adab',)),
+                MaterialPageRoute(
+                    builder: (context) => CafeteriaShop(
+                          cafe: 'Adab',
+                        )),
               );
             },
           ),
@@ -89,7 +93,7 @@ class CafeRoom extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(20)),
         image: new DecorationImage(
-          image: new AssetImage("images/ca3.png"),
+          image: new AssetImage("images/image3.png"),
           fit: BoxFit.fitWidth,
         ),
       ),
@@ -101,7 +105,7 @@ class CafeRoom extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              "Tamreed Cafeteria",
+              "",
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
@@ -113,7 +117,10 @@ class CafeRoom extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => CafeteriaShop(cafe: 'Temre',)),
+                MaterialPageRoute(
+                    builder: (context) => CafeteriaShop(
+                          cafe: 'Temre',
+                        )),
               );
             },
           ),
@@ -135,8 +142,7 @@ class CafeRoom extends StatelessWidget {
         body: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: BoxDecoration(
-          color: Color(0xffcbd8c8)),
+          decoration: BoxDecoration(color: Color(0xffcbd8c8)),
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
