@@ -28,10 +28,10 @@ class ListAdabView extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 )
-              ],
-            ),
+              ]
+            )
             /////////////////////////////////// Text("Catog")
-          ],
+          ]
         ),
         Row(
           children: <Widget>[

@@ -1,4 +1,4 @@
-import 'package:finalproject/screens/Doom.dart';
+import 'package:finalproject/stores/cafeteria_shops.dart';
 import 'package:finalproject/widgets/SingleProduct.dart';
 import 'package:flutter/material.dart';
 
@@ -31,8 +31,8 @@ class ListDoomView extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => Doom()));
+                      // Navigator.of(context).pushReplacement(
+                      //     MaterialPageRoute(builder: (context) => Doom()));
                     })
               ],
             ),

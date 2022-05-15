@@ -1,35 +1,26 @@
-import 'package:finalproject/screens/CafeRoom.dart';
-import 'package:finalproject/screens/CartScreen.dart';
-import 'package:finalproject/screens/CheckOut.dart';
-import 'package:finalproject/screens/Doom.dart';
-import 'package:finalproject/screens/Libraries.dart';
-import 'package:finalproject/screens/Library1.dart';
+import 'dart:async';
 
-import 'package:finalproject/screens/ListdoomProduct.dart';
-import 'package:finalproject/screens/Login.dart';
-import 'package:finalproject/screens/Profile.dart';
-import 'package:finalproject/screens/Services.dart';
-import 'package:finalproject/screens/Signup.dart';
-import 'package:finalproject/test.dart';
-import 'package:finalproject/test1.dart';
+import 'package:finalproject/primary/Home.dart';
+import 'package:finalproject/logins/Login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
-  //late List<Item> items = [];
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
 
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,21 +29,48 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: Task(items: items),
-      home: Login(),
+      home: MyHomePage(),
       debugShowCheckedModeBanner: false,
-      // routes: {
-      // Login.routename: (_) => Login(),
-      // Signup.routename: (_) => Signup(),
-      // CafeRoom.routename: (_) => CafeRoom(),
-      // Doom.routename: (_) => Doom(),
-      // Libraries.routename: (_) => Libraries(),
-      // Library1.routename: (_) => Library1(),
-      // Library2.routename: (_) => Library2(),
-      // Library3.routename: (_) => Library3(),
-      // Cart.routename: (_) => Cart(),
-      // Profile.routename: (_) => Profile(),
-      // Services.routename: (_) => Services(),
-      //},
     );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  final user = FirebaseAuth.instance.currentUser;
+
+  @override
+  void initState() {
+    Timer(const Duration(seconds: 2), () {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        if (user != null) {
+          return Home();
+        } else {
+          return Login();
+        }
+      }));
+    });
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: null,
+        backgroundColor: Colors.green,
+        body: Center(
+            child: Container(
+                width: 200,
+                height: 100,
+                child: Image.asset(
+                  'images/bzu1.png',
+                  fit: BoxFit.contain,
+                ))));
   }
 }
